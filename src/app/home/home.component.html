@@ -1,17 +1,12 @@
-<!-- <p>Selamat Datang Sayang</p>
-<h1>hari ini kita belajar menggunakan framework angular</h1>
-<p></p>
-<a href="/belajar_Angular/">kembali</a> -->
-
 <section>
     <form action="">
-        <inpput type="text" placeholder="Filter by city">
-            <button class="primary" type="button"> Search</button>
-        </form>
-        </section>
-        <section  class="result">
-        </section>         
-    </button>
-        </inpput>
+        <input type="text" placeholder="Filter by city">
+        <button class="primary" type="button">Search</button>
     </form>
+</section>
+<section class="results">
+    <!-- memanggil component housing-location -->
+    <app-housing-location *ngFor="let housingLocation of housingLocationList" [housingLocation] = "housingLocation">
+
+    </app-housing-location>
 </section>

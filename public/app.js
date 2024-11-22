@@ -1,0 +1,1 @@
+app.set('vinus', path, join(__dirname,'app_server','view'));

@@ -1,17 +1,16 @@
-
 import { Component, Inject, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { HousingService } from '../housing.service';
 import { HousingLocation } from '../housing-location';
-import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormControl, ReactiveFormsModule  } from '@angular/forms';
 
 @Component({
   selector: 'app-details',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   template: `
-     <article>
+     <article >
       <img class="listing-photo" [src]="housingLocation?.photo"
         alt="Exterior photo of {{housingLocation?.name}}"/>
       <section class="listing-description">
@@ -33,12 +32,13 @@ import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
           <input type="text" id="first-name" formControlName="firstName" placeholder="Input first name">
           <label for="last-name">Last Name</label>
           <input type="text" id="last-name" formControlName="lastName" placeholder="Input last name">
+          
           <label for="email">Email</label>
           <input type="email" id="email" formControlName="email" placeholder="Input email">
           <button type="submit" class="primary">Apply</button>
         </form>
       </section>
-     </article>
+    </article>
   `,
   styleUrl: './details.component.css'
 })
@@ -63,10 +63,7 @@ export class DetailsComponent {
   }
 
   submitApplyForm(){
-    // alert("Hallo you submit a form");
-    // alert("Hallo : " + this.applyForm.value.firstName + " " + this.applyForm.value.lastName);
-
-    // panggil API simpan data registrasi via service
+    //panggil API simpan data registarsi via service
     this.housingService.submitApplication(
       this.applyForm.value.firstName ?? '',
       this.applyForm.value.lastName ?? '',
